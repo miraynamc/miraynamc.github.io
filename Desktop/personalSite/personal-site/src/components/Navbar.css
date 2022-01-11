@@ -1,0 +1,24 @@
+.navbar-container{
+    width: 100%;
+    height: 70px;
+    position: relative;
+}
+
+.nav-links{
+    align-items: center;
+    justify-content: space-between;
+    text-align: center;
+}
+.nav-items{
+    text-align: center;
+}
+#navbar-contents{
+    align-items: center;
+    justify-content: space-between;
+}
+
+#navbar-container{
+    width: 100%;
+    height: 70px;
+    position: relative;
+}

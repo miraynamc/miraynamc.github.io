@@ -1,0 +1,24 @@
+
+
+.imgcontainer {
+    width: 220px;
+    height: 300px;
+    float: left;
+    padding: 50px;
+}
+
+.nameStyle {
+    text-align: center;
+}
+
+.textContainer {
+    width: 300px;
+    height: 300px;
+    padding: 50px;
+}
+
+.resume {
+    border: black;
+}
+
+
