@@ -25,7 +25,6 @@ const NContents = styled.nav`
 
 function Contact(props) {
     return(
-        <Page>
         <Container>
         <Title>Contact Me</Title>
         <TagLine>Get in touch with me or just leave a comment!</TagLine>
@@ -48,7 +47,6 @@ function Contact(props) {
         </A1>
         </NContents>
         </Container>
-        </Page>
     )
 }
 export default Contact;

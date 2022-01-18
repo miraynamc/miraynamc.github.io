@@ -7,10 +7,9 @@
 }
 
 .image{
-    width:100px;
-    height: 60px;
+    width:50vw;
+    height: 50vh;
     border-radius: 10px;
-
 }
 
 .right {

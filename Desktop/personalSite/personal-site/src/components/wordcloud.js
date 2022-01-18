@@ -60,7 +60,7 @@ const options = {
   colors: ["#1f77b4", "#ff7f0e", "#2ca02c", "#d62728", "#9467bd"],
   deterministic: false,
   fontFamily: "impact",
-  fontSizes: [10, 45, 50],
+  fontSizes: ['10', '20', '70'],
   fontStyle: "normal",
   fontWeight: "normal",
   padding: 2,
@@ -72,7 +72,7 @@ const options = {
 };
 
 function SimpleWordcloud() {
-  return <ReactWordcloud options = {options} words={words} size={[50,50]} />
+  return <ReactWordcloud options = {options} words={words}/>
 }
 
 export default SimpleWordcloud;
