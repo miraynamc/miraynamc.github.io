@@ -1,31 +1,32 @@
 import React, { useEffect, useState } from 'react';
 import emailjs from 'emailjs-com';
 import styled from 'styled-components';
+import './Message.css'
 
 
 const SubmitButton = styled.input`
-    background-color: ${props => props.theme.titleColor};
-    color: ${props => props.theme.tagLineColor};
+    background-color: ${props => props.theme.opposite};
+    color: ${props => props.theme.backgroundColor};
     border-radius: 20%;
     justify-content: center;
 `;
 
 const SubmitForm = styled.div`
     padding: 30px;
-    background-color: ${props => props.theme.titleColor};
+    background-color: ${props => props.theme.themeColor};
     border-radius: 10%;
-    width: 500px;
-    height: 300px;
+    width: 50vw;
+    height: 50vh;
+    opacity: .7
     
 `;
 
-export const Message = () => {
+export default function Message(props) {
     const [values, setValues] = useState({
         from_name: '',
         from_email: '',
         message: ''
-    })
-
+    });
     const [status, setStatus] = useState('');
 
     const sendEmail = (e) => {
@@ -62,7 +63,7 @@ export const Message = () => {
     }
 
     return (
-        <SubmitForm>
+        <SubmitForm >
             <form onSubmit={sendEmail} style={{alignItems:'center'}}>
                 <div style={{display:'flex', justifyContent:'center' }}>
                 <div style={{padding:15}}>
@@ -79,6 +80,6 @@ export const Message = () => {
                         <SubmitButton type="submit" value="Send" />
                     </div>
             </form>
-        </SubmitForm>
+        </SubmitForm >
     );
 };

@@ -1,38 +1,38 @@
 import { BiDownArrow } from 'react-icons/bi';
-import React, { useRef } from 'react';
+import React from 'react';
 import '../components/components.css';
-import { TagLine, Title } from "./Styled";
-import { useRive } from 'rive-react';
-import Typing from './typing.riv';
-import { Link } from 'react-router-dom';
+import { TagLine, Title} from "./Styled";
 import Skills from './Skills';
+import './Home.css';
+import profile from '../assets/profile.png'
 
 
 function Home(props) {
 
-    const { rive, RiveComponent } = useRive({
-        src: Typing,
-        animations: "Type",
-        autoplay: true
-    });
     const scroll = () => {
         document.getElementById("scroller").scrollTo({ top: 500, behavior: 'smooth' });
         console.log('called')
     }
-
     return (
         <div className="pages" id='scroller'>
-            <div>
-                <TagLine>Hello! My name is</TagLine>
-                <Title>Mirayna Mckinney</Title>
-                <TagLine>UCLA Linguistics and Computer Science</TagLine>
-                <RiveComponent src={Typing} animations="Type" style={{ height: '50%', backgroundColor: 'transparent', margin: 0, justifyContent: 'center' }} />
-                <div>
-                    <h6 >Learn More About Me</h6>
-                    <BiDownArrow onClick={scroll} />
+            <div className='page'>
+
+                <div style={{display:'flex', height: '100vh'}}>
+                    <div className='leftmain'>
+                        <div className='profileContainer' > <img src={profile} style={{  height: '50vw', padding: '10vw', float:'right', paddingBottom: 100 }}/> </div>
+                    </div>
+                    <div className='rightmain'>
+                    <Title style={{marginTop: '30vh'}}>Mirayna Mckinney</Title>
+                <TagLine style={{fontSize:10}}>UCLA Linguistics and Computer Science</TagLine>
+                    </div>
+                </div>
+
+                <div className='bounce' style={{textAlign: 'center', position: 'absolute', top:'90%', width: '100vw'}}>
+                    <TagLine style={{fontSize:10}}>Learn More About Me</TagLine>
+                    <BiDownArrow onClick= {scroll} color={props.theme.opposite}/>
                 </div>
             </div>
-            <div>
+            <div className='page'>
                 <Skills />
             </div>
         </div>

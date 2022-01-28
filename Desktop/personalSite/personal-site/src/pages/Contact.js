@@ -1,11 +1,12 @@
 import { ExternalLink } from 'react-external-link';
-import {Page, Container, TagLine, Title, A1} from "./Styled"
+import { Container, TagLine, Title, A1} from "./Styled"
 import styled from 'styled-components';
 import {BsLinkedin, BsInstagram, BsGithub} from 'react-icons/bs'
-import { Message } from '../components/Message';
+import Message from '../components/Message';
+import '../components/Navbar.css'
 
 const Extlink = styled(ExternalLink)`
-color: ${props => props.theme.pageBackground};
+color: ${props => props.theme === "light" ?"#dfdfdf" : "#2b2b2b" };
 text-align: center;
 justify-content: center;
 align-items: center;
@@ -20,29 +21,30 @@ const NContents = styled.nav`
     align-items: center;
     align:center;
     justify-content: space-between;
-    color: ${props => props.theme.pageBackground};
+    
 `;
 
 function Contact(props) {
+    console.log(props.theme.opposite)
     return(
         <Container>
         <Title>Contact Me</Title>
-        <TagLine>Get in touch with me or just leave a comment!</TagLine>
-        <Message/>
+        <TagLine style={{marginBottom: '2vh'}}>Get in touch with me or just leave a comment!</TagLine>
+        <Message theme={props.theme}/>
         <NContents>
         <A1>
                     <Extlink href="https://www.linkedin.com/in/mirayna-mckinney-905026213" style={{ textDecoration: 'none'  }}>
-                        <BsLinkedin size={30} />
+                        <BsLinkedin className='nav-link' size={30} color={props.theme.opposite}/>
                     </Extlink>
         </A1>
         <A1>
                     <Extlink href="https://www.linkedin.com/in/mirayna-mckinney-905026213" style={{ textDecoration: 'none' }}>
-                        <BsInstagram size={30} />
+                        <BsInstagram className='nav-link' size={30} color={props.theme.opposite}/>
                     </Extlink>
         </A1>
         <A1>
                     <Extlink href="https://github.com/MiraynaMckinney" style={{ textDecoration: 'none' }}>
-                        <BsGithub size = {30} />
+                        <BsGithub className='nav-link' size = {30} color={props.theme.opposite}/>
                     </Extlink>
         </A1>
         </NContents>

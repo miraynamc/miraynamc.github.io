@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled, { keyframes } from 'styled-components'
 import { Link } from 'react-router-dom';
 
 export const Page = styled.div`
@@ -13,8 +13,7 @@ export const Page = styled.div`
 export const TagLine2 = styled.h1`
     color: ${props => props.theme.tagLineColor};
     background-color: transparent;
-    font-size: 18px;
-    text-align: center;
+    font-size: 3vh;
 `;
 
 export const Container = styled.div`
@@ -27,7 +26,7 @@ export const Container = styled.div`
 export const TagLine = styled.h1`
     color: ${props => props.theme.tagLineColor};
     background-color: transparent;
-    font-size: 18px;
+    font-size: 3vh;
     text-align: center;
     font-weight: normal;
     margin: 0;
@@ -36,10 +35,9 @@ export const Title = styled.h1`
     color: ${props => props.theme.titleColor};
     background-color: transparent;
     text-align: center;
-    borderRadius: '15px',
-    position: 'relative',
-    font-size: 50px;
-    font-family: Maku;
+    border-radius: '15px';
+    position: 'relative';
+    font-size: '60vh';
     margin: 0;
 `;
 export const A1 = styled.a`

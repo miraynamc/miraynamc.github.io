@@ -1,5 +1,14 @@
 import React from 'react';
 import ReactWordcloud from 'react-wordcloud';
+import { useState, useEffect } from 'react';
+
+function getWindowDimensions() {
+  const { innerWidth: width, innerHeight: height } = window;
+  return {
+    height,
+    width
+  };
+}
  
 const words = [
   {
@@ -52,15 +61,26 @@ const words = [
   },
   {
     text: 'Git',
-    value: Math.random(15),
+    value: Math.random(15)
   }
 ]
  
+function SimpleWordcloud() {
+  const [windowDimensions, setWindowDimensions] = useState(getWindowDimensions());
+
+  useEffect(() => {
+    function handleResize() {
+      setWindowDimensions(getWindowDimensions());
+    }
+
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+  const  { height, width } = windowDimensions;
 const options = {
   colors: ["#1f77b4", "#ff7f0e", "#2ca02c", "#d62728", "#9467bd"],
   deterministic: false,
   fontFamily: "impact",
-  fontSizes: ['10', '20', '70'],
   fontStyle: "normal",
   fontWeight: "normal",
   padding: 2,
@@ -68,10 +88,10 @@ const options = {
   rotationAngles: [0, 90],
   scale: "sqrt",
   spiral: "archimedean",
-  transitionDuration: 1000
+  transitionDuration: 1000,
+  fontSizes: [height/20, height/30, height/45]
 };
-
-function SimpleWordcloud() {
+  
   return <ReactWordcloud options = {options} words={words}/>
 }
 

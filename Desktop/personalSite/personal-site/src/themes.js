@@ -1,14 +1,18 @@
 
 
 export const lightTheme = {
-    titleColor: 'rgb(7, 97, 85)',
+    titleColor: 'black',
     tagLineColor: "black",
-    pageBackground: 'black',
-    fontColor: '#000',
+    fontColor: 'black',
+    opposite: 'black',
+    backgroundColor: '#dfdfdf',
+    themeColor: 'rgb(96, 178, 226)'
 };
 export const darkTheme = {
-    titleColor: "rgb(114, 240, 223)",
-    tagLineColor: "lavender",
-    pageBackground: 'white',
-    fontColor: '#fff'
+    titleColor: "white",
+    tagLineColor: "white",
+    fontColor: 'white',
+    opposite: 'white',
+    backgroundColor: '#2b2b2b',
+    themeColor: ' rgb(96, 178, 226)'
 };

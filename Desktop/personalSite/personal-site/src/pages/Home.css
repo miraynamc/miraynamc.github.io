@@ -26,15 +26,60 @@
     overflow: scroll;
     position: relative;
     width: 100vw;
-    height: calc(100vh - 70px);
+    height: calc(100vh - 15vh);
     scrollbar-width: none;
     
 }
 
-.pages div{
+.page {
     scroll-snap-align: start;
-    height: calc(100vh - 70px);
+    height: calc(100vh - 15vh);
     width: 100vw;
     justify-content: center;
     scroll-behavior: smooth;
+}
+
+.bounce {
+    animation: 2s ease-in-out 0s infinite alternate bounceArrow ;
+  }
+  
+  @keyframes bounceArrow {
+    from {
+      top:88%;
+    }
+    to {
+      top:90%
+    }
+  }
+
+  .skillscloud{
+    background-color: rgb(96, 178, 226);
+    width: 50vw;
+    height: 50vw;
+    -moz-border-radius: 50vw;
+    -webkit-border-radius: 50vw;
+    border-radius: 50vw;
+}
+
+.leftmain {
+    flex: .5;
+    overflow: hidden;
+}
+.profileContainer{
+    width: 60vw;
+    height: 60vw;
+    background-color: rgb(96, 178, 226);
+    border-radius: 50%;
+    float: right;
+
+
+}
+.rightmain {
+    flex: .5;
+    overflow: hidden;
+    vertical-align: center;
+
+}
+.profilecontainer.img{
+    
 }

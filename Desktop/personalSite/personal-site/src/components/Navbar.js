@@ -13,6 +13,7 @@ const Linkcont = styled(Link)`
     text-align: center;
     padding: 50 px;
     background-image: '';
+    color: ${props => props.theme.tagLineColor};
 `
 
 function Navbar(props) {
@@ -23,19 +24,20 @@ function Navbar(props) {
             props.setTheme("light");
         }
     };
-    const icon = props.theme === "light" ? <CgSun size={30} color='black' /> : < HiMoon size={30} color='white'  />;
+    const icon = props.theme === "light" ? <CgSun size={30} color='black' className='nav-link'/> : < HiMoon size={30} color='white' className='nav-link'/>;
     return (
         <Typography className='navbar-container'>
-            <a href='/' style={{textDecoration: 'none'}}><Logo/></a>
-            <Linkcont to='/resume' style={{ textDecoration: 'none'}}>
+            <Linkcont to='/' className='nav-link' ><Logo theme={props.theme}/></Linkcont>
+            <Linkcont to='/resume' className='nav-link'>
                 Skills
             </Linkcont>
-            <Linkcont to='/contact' style={{ textDecoration: 'none'}}>
+            <Linkcont to='/contact' className='nav-link' >
                 Contact Me
             </Linkcont>
             <div onClick={changeTheme} style={{ position: 'sticky' }}>
                 {icon}
             </div>
+            
         </Typography>
 
     )

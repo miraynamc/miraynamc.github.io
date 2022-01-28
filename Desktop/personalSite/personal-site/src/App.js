@@ -19,19 +19,19 @@ const themes = {
 
 function App() {
   const [theme, setTheme] = useState("light");
-  const bc = theme === "light" ? "#2DF5FF" : "#135d61";
+  const bc = theme === "light" ? "#dfdfdf" : "#2b2b2b";
   document.documentElement.style.setProperty(`--main-color`, `${bc}`);
   return (
     <ThemeProvider theme={themes[theme]}>
-      <div class='app'>
+      <div className='app'>
         <header>
           <Navbar theme={theme} setTheme={setTheme} style={{ postion: 'relative', backgroundColor: 'transparent' }} />
         </header>
         <Routes >
-          <Route exact path="/" element={<Home className="routepages"/>} />
-          <Route exact path="/skills" element={<Skills className="routepages" />} />
-          <Route exact path="/resume" element={<Resume className="routepages"/>} />
-          <Route exact path="/contact" element={<Contact className="routepages"/>} />
+          <Route exact path="/" element={<Home className="routepages" theme={themes[theme]}/>} />
+          <Route exact path="/skills" element={<Skills className="routepages" theme={themes[theme]}/>} />
+          <Route exact path="/resume" element={<Resume className="routepages" theme={themes[theme]}/>} />
+          <Route exact path="/contact" element={<Contact className="routepages" theme={themes[theme]}/>} />
         </Routes>
       </div>
     </ThemeProvider>

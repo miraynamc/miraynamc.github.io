@@ -2,28 +2,28 @@ import React, {useState} from "react";
 import './projectslider.css'
 import {BiRightArrow, BiLeftArrow} from 'react-icons/bi'
 import WW1 from '../assets/WW1.png'
+import snow from '../assets/snow.jpeg'
 
 
 const Slides = [
     {
         image: WW1,
         source:'https://github.com/guilhermetco/CS97---WestWoodWalks',
-        text:'',
+        text:'first',
 
     },
     {
         image:'https://ychef.files.bbci.co.uk/976x549/p09g169z.jpg',
         source:'',
-        text:''
+        text:'second'
     }
 ]
+const slidesNum = Slides.length;
+let slides = Slides;
 
 
-
-export default function Slider(props){
+export function Slider(props){
     const [current, setCurrent] = useState(0);
-    const slidesNum = Slides.length;
-    let slides = Slides;
     if(!Array.isArray(Slides) || Slides.length <= 0){
         return null;
     }
@@ -36,7 +36,6 @@ export default function Slider(props){
     const licon = props.theme === "light" ? <BiLeftArrow color='black' /> : < BiLeftArrow  color='white' />;
     const ricon = props.theme === "light" ? <BiRightArrow  color='black' /> : < BiRightArrow  color='white' />;
     const handleClick = (link) => {
-        console.log(props.theme);
     }
     return(
         <section className='slider'>
@@ -46,7 +45,57 @@ export default function Slider(props){
                 slides.map((project,index)=>{
                     return(
                         <div className={index===current? 'slide active' : 'slide'} key={index}>
-                            {index=== current && <img src={project.image} alt= "travel image" className="image" onClick={handleClick(project.source)}/>}
+                            {index=== current && <img src={project.image} alt= "travel" className="image" onClick={handleClick(project.source)}/>}
+                            <h6 style={{padding:'5vh', textAlign:'center'}}> {project.text}</h6>
+                        </div>
+                    )
+                })
+            }
+        </section>
+    )
+}
+
+const Pics = [
+    {
+        image: snow,
+        source:'https://github.com/guilhermetco/CS97---WestWoodWalks',
+        text:'first',
+
+    },
+    {
+        image:'https://ychef.files.bbci.co.uk/976x549/p09g169z.jpg',
+        source:'',
+        text:'second'
+    }
+]
+
+const picsNum = Slides.length;
+
+export function PicSlider(props){
+    const [current, setCurrent] = useState(0);
+    if(!Array.isArray(Pics) || Pics.length <= 0){
+        return null;
+    }
+    const prevSlide = () => {
+        setCurrent(current === 0? picsNum-1: current-1);
+    }
+    const nextSlide = () => {
+        setCurrent(current === picsNum - 1 ? 0: current+1 );
+    }
+    const licon = props.theme === "light" ? <BiLeftArrow color='black' /> : < BiLeftArrow  color='white' />;
+    const ricon = props.theme === "light" ? <BiRightArrow  color='black' /> : < BiRightArrow  color='white' />;
+    const handleClick = (link) => {
+        console.log(props.theme);
+    }
+    return(
+        <section className='picslider'>
+            < section className="left" onClick={prevSlide}> {licon}</section>
+            < section className="right" onClick={nextSlide}> {ricon}</section>
+            {
+                Pics.map((project,index)=>{
+                    return(
+                        <div className={index===current? 'slide active' : 'slide'} key={index}>
+                            {index=== current && <img src={project.image} alt= "travel" className="picimage" onClick={handleClick(project.source)}/>}
                         </div>
                     )
                 })

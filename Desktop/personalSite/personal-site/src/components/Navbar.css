@@ -1,9 +1,11 @@
 
-.nav-links{
-    align-items: center;
-    justify-content: space-between;
-    text-align: center;
+.nav-link{
+    text-decoration: none;
 }
+.nav-link:hover{
+    transform: scale(1.03);
+}
+
 .nav-items{
     text-align: center;
 }
@@ -15,7 +17,7 @@
 
 .navbar-container{
     width: 100vw;
-    height: 70px;
+    height: 15vh;
     position: relative;
     display: flex;
     align-items: center;
