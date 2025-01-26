@@ -1,23 +1,20 @@
-import { useState } from 'react'
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { NavBar } from "./components/NavBar";
-import { Banner } from "./components/Banner";
-import { Skills } from "./components/Skills";
-import { Projects } from "./components/Projects";
-import { Contact } from "./components/Contact";
+import { Homepage } from './components/Homepage';
+// import { NavBar } from './components/NavBar';
+// import { Banner } from "./components/Banner";
+// import { Skills } from "./components/Skills";
+// import { Projects } from "./components/Projects";
+// import { Contact } from "./components/Contact";
+// import {
+//   BrowserRouter as Router,
+//   Switch,
+//   Route,
+// } from "react-router-dom";
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <>
-    <NavBar/>
-    <Banner/>
-    <Skills/>
-    <Projects/>
-    <Contact/>
-    </>
+    <Homepage/>
   )
 }
 

@@ -1,8 +1,11 @@
 import { Container, Row, Col, Tab, Nav } from "react-bootstrap";
 import { ProjectCard } from "./ProjectCard";
-import projImg1 from "../assets/img/project-img1.png";
-import projImg2 from "../assets/img/project-img2.png";
-import projImg3 from "../assets/img/project-img3.png";
+import BPS from "../assets/img/BPS.png";
+import flappy from "../assets/img/flappy.png";
+import LetterBoxed from "../assets/img/LetterBoxed.png";
+import MorseCode from "../assets/img/MorseCode.png";
+import MyToDos from "../assets/img/MyToDos.png";
+import Wordle from "../assets/img/Wordle.png";
 import colorSharp2 from "../assets/img/color-sharp2.png";
 import TrackVisibility from 'react-on-screen';
 import 'animate.css';
@@ -11,34 +14,34 @@ export const Projects = () => {
 
   const projects = [
     {
-      title: "Business Startup",
+      title: "Bruin Polyglot Society Webpage",
       description: "Design & Development",
-      imgUrl: projImg1,
+      imgUrl: BPS,
     },
     {
-      title: "Business Startup",
+      title: "Flappy Bird Knockoff",
       description: "Design & Development",
-      imgUrl: projImg2,
+      imgUrl: flappy,
     },
     {
-      title: "Business Startup",
+      title: "NYT Letterboxed",
       description: "Design & Development",
-      imgUrl: projImg3,
+      imgUrl: LetterBoxed,
     },
     {
-      title: "Business Startup",
+      title: "Morsecode translator",
       description: "Design & Development",
-      imgUrl: projImg1,
+      imgUrl: MorseCode,
     },
     {
-      title: "Business Startup",
+      title: "My To-Dos",
       description: "Design & Development",
-      imgUrl: projImg2,
+      imgUrl: MyToDos,
     },
     {
-      title: "Business Startup",
+      title: "Wordle Recreation",
       description: "Design & Development",
-      imgUrl: projImg3,
+      imgUrl: Wordle,
     },
   ];
 
@@ -51,7 +54,7 @@ export const Projects = () => {
               {({ isVisible }) =>
               <div className={isVisible ? "animate__animated animate__fadeIn": ""}>
                 <h2>Projects</h2>
-                <p>These are a few of the projects I've worked on recently</p>
+                <p>These are a few of the projects I've worked on recently!</p>
                   <Row>
                     {
                       projects.map((project, index) => {
