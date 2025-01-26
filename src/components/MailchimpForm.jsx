@@ -19,3 +19,4 @@ export const MailchimpForm = () => {
     </>
   )
 }
+const mailchimpURL = `https://gmail.us13.list-manage.com/subscribe/post?u=39a6c9d03429e8c5e41bfbe9b&amp;id=b4381e1c04&amp;f_id=00dd61e1f0`;
