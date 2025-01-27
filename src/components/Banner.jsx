@@ -50,7 +50,7 @@ import 'animate.css';
   return (
     <section className="banner" id="home">
       <Container>
-        <Row className={screenSize > 990 ? "align-items-center": "small-screen-align"}>
+        <Row className={screenSize > 990 ? "align-items-center": "small-screen-align"} style={{height: "60vh"}}>
           <Col xs={12} md={6} xl={7}>
             <TrackVisibility>
               {({ isVisible }) =>
