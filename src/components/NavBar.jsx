@@ -28,25 +28,48 @@ export const NavBar = () => {
     setActiveLink(value);
   }
 
-  return (
-    <Router>
-      <Navbar expand="md" className={scrolled ? "scrolled" : ""}>
-        <Container className="nav-container">
-          <Navbar.Collapse id="basic-navbar-nav">
-            <Nav className="ms-auto">
+    return (
+      <Router>
+        <Navbar expand="md" className={scrolled ? "scrolled" : ""}>
+          <Container>
+            <Navbar.Toggle aria-controls="basic-navbar-nav">
+              <span className="navbar-toggler-icon"></span>
+            </Navbar.Toggle>
+            <Navbar.Collapse id="basic-navbar-nav">
+              <Nav className="ms-auto">
               <Nav.Link href="#home" className={activeLink === 'home' ? 'active navbar-link' : 'navbar-link'} onClick={() => onUpdateActiveLink('home')}>Home</Nav.Link>
               <Nav.Link href="#skills" className={activeLink === 'skills' ? 'active navbar-link' : 'navbar-link'} onClick={() => onUpdateActiveLink('skills')}>Skills</Nav.Link>
               <Nav.Link href="#projects" className={activeLink === 'projects' ? 'active navbar-link' : 'navbar-link'} onClick={() => onUpdateActiveLink('projects')}>Projects</Nav.Link>
               <Nav.Link style={{textDecoration: 'none', color: 'white'}} href="https://www.linkedin.com/in/mirayna-mckinney-905026213" className="navbar-link">LinkedIn</Nav.Link>
-            </Nav>
-            <span className="navbar-text">
-              <HashLink to='#connect'>
-                <button className="vvd"><span>Let’s Connect</span></button>
-              </HashLink>
-            </span>
-          </Navbar.Collapse>
-        </Container>
-      </Navbar>
-    </Router>
+              </Nav>
+              <span className="navbar-text">
+                <HashLink to='#connect'>
+                  <button className="vvd"><span>Let’s Connect</span></button>
+                </HashLink>
+              </span>
+            </Navbar.Collapse>
+          </Container>
+        </Navbar>
+      </Router>
+
+    // <Router>
+    //   <Navbar expand="md" className={scrolled ? "scrolled" : ""}>
+    //     <Container className="nav-container">
+    //       <Navbar.Collapse id="basic-navbar-nav">
+    //         <Nav className="ms-auto">
+              // <Nav.Link href="#home" className={activeLink === 'home' ? 'active navbar-link' : 'navbar-link'} onClick={() => onUpdateActiveLink('home')}>Home</Nav.Link>
+              // <Nav.Link href="#skills" className={activeLink === 'skills' ? 'active navbar-link' : 'navbar-link'} onClick={() => onUpdateActiveLink('skills')}>Skills</Nav.Link>
+              // <Nav.Link href="#projects" className={activeLink === 'projects' ? 'active navbar-link' : 'navbar-link'} onClick={() => onUpdateActiveLink('projects')}>Projects</Nav.Link>
+              // <Nav.Link style={{textDecoration: 'none', color: 'white'}} href="https://www.linkedin.com/in/mirayna-mckinney-905026213" className="navbar-link">LinkedIn</Nav.Link>
+    //         </Nav>
+    //         <span className="navbar-text">
+    //           <HashLink to='#connect'>
+    //             <button className="vvd"><span>Let’s Connect</span></button>
+    //           </HashLink>
+    //         </span>
+    //       </Navbar.Collapse>
+    //     </Container>
+    //   </Navbar>
+    // </Router>
   )
 }

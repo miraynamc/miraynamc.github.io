@@ -15,7 +15,7 @@
 	font-weight: 400;
 }
 
-/************ Default CSS ************/
+/************ Default Css ************/
 * {
   margin: 0;
   padding: 0;
@@ -81,11 +81,10 @@ p.success {
 p.danger {
 	color: red;
 }
-/************ Navbar CSS ************/
+/************ Navbar Css ************/
 nav.navbar {
   padding: 18px 0;
   position: fixed;
-  display: flex;
   width: 100%;
   top: 0;
   z-index: 9999;
@@ -95,7 +94,9 @@ nav.navbar.scrolled {
   padding: 0px 0;
   background-color: #121212;
 }
-
+nav.navbar a.navbar-brand {
+    width: 9%;
+}
 nav.navbar .navbar-nav .nav-link.navbar-link {
   font-weight: 400;
   color: #fff !important;
@@ -232,25 +233,25 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
 /************ Banner Css ************/
 .banner {
   margin-top: 0;
-  padding: 15% 0 20% 0;
+  padding: 260px 0 100px 0;
   background-image: url('./assets/img/banner-bg.png');
   background-position: top center;
   background-size: cover;
   background-repeat: no-repeat;
 }
 .banner .tagline {
-  font-weight: 500;
+  font-weight: 700;
   letter-spacing: 0.8px;
   padding: 8px 10px;
   background: linear-gradient(90.21deg, rgba(170, 54, 124, 0.5) -5.91%, rgba(74, 47, 189, 0.5) 111.58%);
   border: 1px solid rgba(255, 255, 255, 0.5);
-  font-size: 15px;
+  font-size: 20px;
   margin-bottom: 16px;
   display: inline-block;
 }
 .banner h1 {
-  font-size: 45px;
-  font-weight: 500;
+  font-size: 65px;
+  font-weight: 700;
   letter-spacing: 0.8px;
   line-height: 1;
   margin-bottom: 20px;
@@ -379,6 +380,7 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   letter-spacing: 0.8px;
   font-weight: 500;
   position: relative;
+  transition: 0.3s ease-in-out;
   text-align: center;
   z-index: 0;
 }
@@ -424,6 +426,7 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   position: absolute;
   width: 100%;
   height: 0;
+  transition: 0.4s ease-in-out;
 }
 .proj-imgbx:hover::before {
   height: 100%;
@@ -434,6 +437,7 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   top: 65%;
   left: 50%;
   transform: translate(-50%, -50%);
+  transition: 0.5s ease-in-out;
   opacity: 0;
   width: 100%;
 }

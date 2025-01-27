@@ -14,34 +14,34 @@ export const Projects = () => {
 
   const projects = [
     {
+      title: "Wordle Recreation",
+      description: "JSX, React, CSS",
+      imgUrl: Wordle,
+    },
+    {
       title: "Bruin Polyglot Society Webpage",
-      description: "Design & Development",
+      description: "HTML, CSS, JS",
       imgUrl: BPS,
     },
     {
-      title: "Flappy Bird Knockoff",
-      description: "Design & Development",
-      imgUrl: flappy,
-    },
-    {
-      title: "NYT Letterboxed",
-      description: "Design & Development",
-      imgUrl: LetterBoxed,
-    },
-    {
-      title: "Morsecode translator",
-      description: "Design & Development",
-      imgUrl: MorseCode,
-    },
-    {
       title: "My To-Dos",
-      description: "Design & Development",
+      description: "React, Tailwind CSS",
       imgUrl: MyToDos,
     },
     {
-      title: "Wordle Recreation",
-      description: "Design & Development",
-      imgUrl: Wordle,
+      title: "Morsecode translator",
+      description: "HTML, CSS",
+      imgUrl: MorseCode,
+    },
+    {
+      title: "NYT Letterboxed",
+      description: "JSX, React, CSS",
+      imgUrl: LetterBoxed,
+    },
+    {
+      title: "Flappy Bird Knockoff",
+      description: "HTML, CSS, JS",
+      imgUrl: flappy,
     },
   ];
 

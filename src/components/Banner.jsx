@@ -1,9 +1,7 @@
 import { useState, useEffect } from "react";
 import { Container, Row, Col, Nav } from "react-bootstrap";
-import headerImg from "../assets/img/header-img.svg";
 import { ArrowRightCircle } from 'react-bootstrap-icons';
 import TrackVisibility from 'react-on-screen';
-import { HashLink } from 'react-router-hash-link';
 import 'animate.css';
 
  export const Banner = () => {
@@ -14,6 +12,7 @@ import 'animate.css';
   const [index, setIndex] = useState(1);
   const toRotate = [ "Software Engineer", "Web Developer", "UI/UX Designer" ];
   const period = 2000;
+  const screenSize = screen.width;
 
   useEffect(() => {
     let ticker = setInterval(() => {
@@ -51,13 +50,13 @@ import 'animate.css';
   return (
     <section className="banner" id="home">
       <Container>
-        <Row className="align-items-center">
+        <Row className={screenSize > 990 ? "align-items-center": "small-screen-align"}>
           <Col xs={12} md={6} xl={7}>
             <TrackVisibility>
               {({ isVisible }) =>
               <div className={isVisible ? "animate__animated animate__fadeIn" : ""}>
-                <h1>{`Hello! I am Mirayna - \n`} <span className="txt-rotate" dataPeriod="1000" data-rotate='[ "Software Engineer", "Web Developer", "UI/UX Designer" ]'><span className="wrap">{text}</span></span></h1>
-                  <p> I am a passionate Software Engineer trying to constantly expand my knowledge. I'm always looking for new projects, opportunities, or just good conversation about either, so let's connect! </p>
+                <h1>{`Hello! I am Mirayna -`} <br /> <span className="txt-rotate" dataPeriod="1000" data-rotate='[ "Software Engineer", "Web Developer", "UI/UX Designer" ]'><span className="wrap">{text}</span></span></h1>
+                  <p> I am a passionate Software Engineer constantly trying to expand my knowledge. I'm always looking for new projects, opportunities, or just good conversation, so let's connect! </p>
                   <a href="#connect"><button>Let’s Connect <ArrowRightCircle size={25} /></button> </a>
               </div>}
             </TrackVisibility>
@@ -66,6 +65,7 @@ import 'animate.css';
             <TrackVisibility>
               {({ isVisible }) =>
                 <div className={isVisible ? "animate__animated animate__zoomIn" : ""}>
+                  {/* <img src={headerImg} alt="Header Img"/> */}
                 </div>}
             </TrackVisibility>
           </Col>
